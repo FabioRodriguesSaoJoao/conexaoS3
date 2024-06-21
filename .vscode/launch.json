@@ -1,0 +1,50 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "vscode-edge-devtools.debug",
+      "request": "launch",
+      "name": "Launch Microsoft Edge and open the Edge DevTools",
+      "url": "http://localhost:9000",
+      "webRoot": "${workspaceFolder}"
+    },
+
+    {
+      "name": "Launch Edge",
+      "request": "launch",
+      "type": "msedge",
+      "url": "http://localhost:9000",
+      "webRoot": "${workspaceFolder}"
+    },
+
+    
+    {
+      "name": "FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "smartbreak-portal-s3:app",
+        "--reload",
+        "--host", "127.0.0.1",
+        "--port", "8000"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "console": "integratedTerminal"
+    },
+    
+  {
+      "type": "java",
+      "name": "Java Debug",
+      "request": "launch",
+      "args":
+      [
+          "-x webapp"
+      ],
+      "mainClass": "com.smartbbrasil.portal.WebSmartbreakPortalApp",
+      "projectName": "web-smartbreak-portal"
+  }
+  ]
+}
